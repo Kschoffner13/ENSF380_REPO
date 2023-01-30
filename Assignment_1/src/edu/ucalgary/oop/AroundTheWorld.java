@@ -80,11 +80,14 @@ public class AroundTheWorld {
                 // Printing every entry in the array would give 720
                 // lines. We only print the first entry in the
                 // 3rd level array as an example.
-                System.out.printf("dateArray[%d][%d][%d] = %s\n", i,j,0,
-                        dateArray[i][j][0]);
-            }
-        }
+                    System.out.printf("dateArray[%d][%d][%d] = %s\n", i,j,0,
+                            dateArray[i][j][0]);
 
+
+            }
+
+        }
+        System.out.println(dateArray[2][1][0]);
     }
 
     // Each line is: arrival date, departure date, city, country/territory

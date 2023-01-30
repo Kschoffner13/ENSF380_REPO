@@ -57,6 +57,18 @@ public class Trip {
                 + city + " (City), " + country + " (Country)";
     }
 
+
+    // added function: returns the place of the trip as a string
+    public String fmtPlace(){
+        return city + " (City), " + country + " (Country)" + " (Place)";
+    }
+
+
+    // added function: returns the full destination name
+    public String fmtDest(){
+        return city + " (City), " + country + " (Country)";
+    }
+
     // Getter
     public String getArrival() {
         return arrival;
