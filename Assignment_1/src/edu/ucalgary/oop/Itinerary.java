@@ -170,44 +170,9 @@ public class Itinerary {
         int monthChecker2023 = 0;
 
         for(int i = 0; trips[i] != null; i++){
-
-            if(trips[i].getTheYear() == 2021){
-                if((trips[i].getTheMonth() -1) > monthChecker2021){
-                    x = 0;
-                    monthChecker2021 = (trips[i].getTheMonth()-1);
-                    totalTravel[0][trips[i].getTheMonth() - 1][x] = trips[i].fmtDest();
-                }
-                else {
-                    totalTravel[0][trips[i].getTheMonth() - 1][x] = trips[i].fmtDest();
-                    x++;
-                }
-            }
-
-            else if(trips[i].getTheYear() == 2022){
-                if((trips[i].getTheMonth() -1) > monthChecker2022){
-                    y = 0;
-                    monthChecker2022 = (trips[i].getTheMonth()-1);
-                    totalTravel[0][trips[i].getTheMonth() - 1][y] = trips[i].fmtDest();
-                }
-                else{
-                    totalTravel[1][trips[i].getTheMonth() - 1][y] = trips[i].fmtDest();
-                    y++;
-                }
-            }
-
-            else if(trips[i].getTheYear() == 2023){
-                if((trips[i].getTheMonth() -1) > monthChecker2023){
-                    z = 0;
-                    monthChecker2023 = (trips[i].getTheMonth()-1);
-                    totalTravel[0][trips[i].getTheMonth() - 1][z] = trips[i].fmtDest();
-                }
-                else{
-                    totalTravel[2][trips[i].getTheMonth() - 1][z] = trips[i].fmtDest();
-                    z++;
-                }
-            }
-
+            for(int)
         }
+
 
 
 
