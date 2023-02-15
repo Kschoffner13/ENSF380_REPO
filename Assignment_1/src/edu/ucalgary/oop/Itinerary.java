@@ -143,38 +143,42 @@ public class Itinerary {
 
     String[][][] byDate() {
 
-        // [x][y][z]
-        // where x (numbers 0-2 = years 2021-2023 respectivlty \
-        // y = # of month -1 (januaray = month 0)
-        // z = each trip of that year and month
 
         String[][][] totalTravel = new String[3][12][];
 
-
-        int x = 0;
-        int y = 0;
-        int z = 0;
-
-        for(int i = 0; i < 12; i++) {
+        for(int i = 0; i < 12; i++) {               // creates a 3D "null" array
 
             totalTravel[0][i] = new String[20];
             totalTravel[1][i] = new String[20];
             totalTravel[2][i] = new String[20];
         }
 
-        // when you jump months, the index value doesnt reset to 0.
-        // fix it.
 
-        int monthChecker2021 = 0;
-        int monthChecker2022 = 0;
-        int monthChecker2023 = 0;
 
-        for(int i = 0; trips[i] != null; i++){
-            for(int)
+        for(int i = 0; trips[i] != null; i++){          // main "for" loop that puts in the values in
+                                                        // the right spot.
+            int year = -1;
+
+            if(trips[i].getTheYear() == 2021){
+                year = 0;
+            }
+            else if(trips[i].getTheYear() == 2022){
+                year = 1;
+            }
+            else if(trips[i].getTheYear() == 2023){
+                year = 2;
+            }
+
+            int month = trips[i].getTheMonth() - 1;
+
+            for(int x = 0; x < 20; x++){
+                if(totalTravel[year][month][x] == null){
+                    totalTravel[year][month][x] = trips[i].fmtDest();
+                    x = 20;     // in here so that the loop stops
+                }
+            }
+
         }
-
-
-
 
         return totalTravel;
     }

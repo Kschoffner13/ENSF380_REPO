@@ -87,7 +87,6 @@ public class AroundTheWorld {
             }
 
         }
-        System.out.println(dateArray[2][1][0]);
     }
 
     // Each line is: arrival date, departure date, city, country/territory
@@ -107,7 +106,8 @@ public class AroundTheWorld {
                 { "2023-02-05", "2023-02-07", "Jeju", "South Korea" },
                 { "2023-02-07", "2023-02-08", "Seoul", "South Korea" },
                 { "2023-02-08", "2023-02-08", "Tokyo", "Japan" },
-                { "2023-02-08", "2023-02-15", "Osaka", "Japan" }
+                { "2023-02-08", "2023-02-15", "Osaka", "Japan" },
+                { "2022-05-08", "2022-06-01", "Munich", "Germany"}
         };
         return example;
     }
