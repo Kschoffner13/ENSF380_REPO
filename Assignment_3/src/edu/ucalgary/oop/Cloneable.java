@@ -1,4 +1,5 @@
-package edu.ucalgary.oop;
-
-public interface Cloneable {
-}
+//package edu.ucalgary.oop;
+//
+//public interface Cloneable {
+//
+//}
