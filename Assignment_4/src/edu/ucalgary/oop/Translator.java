@@ -66,7 +66,7 @@ public class Translator{
      * by code which invokes this constructor).
      */
 
-    public Translator(String langRegionCode) throws Illegal ArgumentException, ArgFileNotFoundException {
+    public Translator(String langRegionCode) throws IllegalArgumentException, ArgFileNotFoundException {
         if (!Pattern.matches("[a-z]{2}-[A-Z]{2}", langRegionCode)) {
             throw new IllegalArgumentException("Invalid language code format");
         }

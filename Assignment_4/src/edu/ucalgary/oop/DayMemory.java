@@ -25,8 +25,6 @@ public class DayMemory {
         }
         else{
             Translator test = new Translator(args[0]);
-            String phrase = test.translate(3, 8, 202);
-            System.out.println(phrase);
         }
 
     }
