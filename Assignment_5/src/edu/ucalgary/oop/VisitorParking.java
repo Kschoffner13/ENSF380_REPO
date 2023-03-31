@@ -3,12 +3,13 @@ package edu.ucalgary.oop;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.TreeSet;
 
 public class VisitorParking {
 
 
     // create a hash map for the license and date of registration
-    private HashMap<String, LocalDate> reservationList = new HashMap<String, LocalDate>();
+    private HashMap<String, TreeSet<LocalDate>> reservationList = new HashMap<String, TreeSet<LocalDate>>();
 
     // constructors
 
