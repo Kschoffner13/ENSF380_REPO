@@ -25,64 +25,64 @@ public class ExistingFunctionalityTest {
     public HouseholdParking testObject2 = new HouseholdParking(expectedTaxRoll, givenZoning, expectedStreet, expectedNumber, givenPostCode);
 
     /** ****** These tests will become obsolete when the new feature is added ******** */
-    @Test
-    public void testAddLicence() {
-        String[] providedValues = { "hEll O", " w-o-r-l-d "};
-        String[] expectedValues = { "HELLO", "WORLD" };
-        testObject1.addOrReplaceResidentLicence(providedValues[0]);
-        testObject1.addOrReplaceResidentLicence(providedValues[1]);
-        testObject1.addOrReplaceResidentLicence(providedValues[0]);
+//    @Test
+//    public void testAddLicence() {
+//        String[] providedValues = { "hEll O", " w-o-r-l-d "};
+//        String[] expectedValues = { "HELLO", "WORLD" };
+//        testObject1.addOrReplaceResidentLicence(providedValues[0]);
+//        testObject1.addOrReplaceResidentLicence(providedValues[1]);
+//        testObject1.addOrReplaceResidentLicence(providedValues[0]);
+//
+//        String[] actualValues = testObject1.getResidentLicence();
+//        assertEquals("First licence is not stored, or not stored in order", expectedValues[0], actualValues[0]);
+//        assertEquals("Second licence is not stored, or not stored in order", expectedValues[1], actualValues[1]);
+//        assertTrue("Duplicate licence is not ignored", (actualValues[2] == null));
+//    }
+//
+//    @Test
+//    public void testReplaceLicence() {
+//        String[] providedValues = {"zero", "uma", "duas", "tres"};
+//        String[] expectedValues = {"ZERO", "UMA", "TRES"};
+//        testObject2.addOrReplaceResidentLicence(providedValues[0]);
+//        testObject2.addOrReplaceResidentLicence(providedValues[1]);
+//        testObject2.addOrReplaceResidentLicence(providedValues[2]);
+//        testObject2.addOrReplaceResidentLicence(providedValues[3]);
+//
+//        String[] actualValues = testObject2.getResidentLicence();
+//        assertEquals("First licence is not stored, or not stored in order", expectedValues[0], actualValues[0]);
+//        assertEquals("Second licence is not stored, or not stored in order", expectedValues[1], actualValues[1]);
+//        assertEquals("Fourth licence did not overwrite third licence", expectedValues[2], actualValues[2]);
+//    }
 
-        String[] actualValues = testObject1.getResidentLicence();
-        assertEquals("First licence is not stored, or not stored in order", expectedValues[0], actualValues[0]);
-        assertEquals("Second licence is not stored, or not stored in order", expectedValues[1], actualValues[1]);
-        assertTrue("Duplicate licence is not ignored", (actualValues[2] == null));
-    }
-
-    @Test
-    public void testReplaceLicence() {
-        String[] providedValues = {"zero", "uma", "duas", "tres"};
-        String[] expectedValues = {"ZERO", "UMA", "TRES"};
-        testObject2.addOrReplaceResidentLicence(providedValues[0]);
-        testObject2.addOrReplaceResidentLicence(providedValues[1]);
-        testObject2.addOrReplaceResidentLicence(providedValues[2]);
-        testObject2.addOrReplaceResidentLicence(providedValues[3]);
-
-        String[] actualValues = testObject2.getResidentLicence();
-        assertEquals("First licence is not stored, or not stored in order", expectedValues[0], actualValues[0]);
-        assertEquals("Second licence is not stored, or not stored in order", expectedValues[1], actualValues[1]);
-        assertEquals("Fourth licence did not overwrite third licence", expectedValues[2], actualValues[2]);
-    }
-
-    @Test
-    public void testRemoveLicence() {
-        var testObject3 = new HouseholdParking(expectedTaxRoll, givenZoning, expectedStreet, expectedNumber, givenPostCode);
-        String[] providedValues = {"yksi", "nelja", "viisi"};
-        String[] expectedValues = {"YKSI", "VIISI"};
-        String rm = "NELJA";
-        testObject3.addOrReplaceResidentLicence(providedValues[0]);
-        testObject3.addOrReplaceResidentLicence(providedValues[1]);
-        testObject3.addOrReplaceResidentLicence(providedValues[2]);
-
-        boolean status = testObject3.removeResidentLicence("NOT HERE");
-        assertFalse("removeResidentLicence() did not return false when the licence couldn't be found", status);
-
-        status = testObject3.removeResidentLicence("this is an invalid licence");
-        assertFalse("removeResidentLicence() did not return false when the licence was invalid", status);
-
-        status = testObject3.removeResidentLicence(rm);
-        String[] actualValues = testObject3.getResidentLicence();
-        assertEquals("First licence was affected by removing middle licence", expectedValues[0], actualValues[0]);
-        assertEquals("Original third licence is not second after removal of second licence", expectedValues[1], actualValues[1]);
-        assertTrue("Third licence position is not empty after removing middle item", (actualValues[2] == null));
-        assertTrue("removeResidentLicence() did not return true after removing a licence", status);
-
-        status = testObject3.removeResidentLicence();
-        actualValues = testObject3.getResidentLicence();
-        assertTrue("First licence position is not empty after removing all", (actualValues[0] == null));
-        assertTrue("Second licence position is not empty after removing all", (actualValues[1] == null));
-        assertTrue("removeResidentLicence() did not return true after removing all licences", status);
-    }
+//    @Test
+//    public void testRemoveLicence() {
+//        var testObject3 = new HouseholdParking(expectedTaxRoll, givenZoning, expectedStreet, expectedNumber, givenPostCode);
+//        String[] providedValues = {"yksi", "nelja", "viisi"};
+//        String[] expectedValues = {"YKSI", "VIISI"};
+//        String rm = "NELJA";
+//        testObject3.addOrReplaceResidentLicence(providedValues[0]);
+//        testObject3.addOrReplaceResidentLicence(providedValues[1]);
+//        testObject3.addOrReplaceResidentLicence(providedValues[2]);
+//
+//        boolean status = testObject3.removeResidentLicence("NOT HERE");
+//        assertFalse("removeResidentLicence() did not return false when the licence couldn't be found", status);
+//
+//        status = testObject3.removeResidentLicence("this is an invalid licence");
+//        assertFalse("removeResidentLicence() did not return false when the licence was invalid", status);
+//
+//        status = testObject3.removeResidentLicence(rm);
+//        String[] actualValues = testObject3.getResidentLicence();
+//        assertEquals("First licence was affected by removing middle licence", expectedValues[0], actualValues[0]);
+//        assertEquals("Original third licence is not second after removal of second licence", expectedValues[1], actualValues[1]);
+//        assertTrue("Third licence position is not empty after removing middle item", (actualValues[2] == null));
+//        assertTrue("removeResidentLicence() did not return true after removing a licence", status);
+//
+//        status = testObject3.removeResidentLicence();
+//        actualValues = testObject3.getResidentLicence();
+//        assertTrue("First licence position is not empty after removing all", (actualValues[0] == null));
+//        assertTrue("Second licence position is not empty after removing all", (actualValues[1] == null));
+//        assertTrue("removeResidentLicence() did not return true after removing all licences", status);
+//    }
 
     /** ****** These tests will remain relevant when the new feature is added ******** */
     @Test
